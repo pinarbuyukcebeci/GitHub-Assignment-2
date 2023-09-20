@@ -3,7 +3,27 @@ import java.util.Random;
 
 
 public class GitHub_Assignment_2 {
-  
+
+    public static int findMax(int[]arr){
+        int max = Integer.MIN_VALUE;
+        for(int j=0; j<arr.length;j++){
+            if(arr[j]>max){
+                max = arr[j];
+            }
+        }
+        return max;
+    }
+
+    public static int findMin(int[]arr){
+        int min = Integer.MAX_VALUE;
+        for(int j=0; j<arr.length;j++){
+            if(arr[j]<min){
+                min = arr[j];
+            }
+        }
+        return min;
+    }
+
     public static void main(String[] args) {
         boolean again = true;
         while(again)
@@ -25,6 +45,7 @@ public class GitHub_Assignment_2 {
             if (choice == 1)
             {
                 System.out.print("The minimum element of the list is: ");
+        
             }
             else if (choice == 2)
             {
@@ -47,7 +68,10 @@ public class GitHub_Assignment_2 {
                 again = false;
                 in.close();
             }
+
         }
     }
+
+
 
 }
