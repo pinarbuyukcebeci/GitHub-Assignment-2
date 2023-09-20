@@ -75,7 +75,7 @@ public class GitHub_Assignment_2 {
             }
             else if (choice == 5)
             {
-                for(int ind=1; ind < arr.length; ind+=2){
+                for(int ind=0; ind < arr.length; ind+=2){
                     sumOfEven += arr[ind];
                 }
                 System.out.print("The sums of elements on even indexes: " + sumOfEven);  
