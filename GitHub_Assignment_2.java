@@ -55,11 +55,12 @@ public class GitHub_Assignment_2 {
             if (choice == 1)
             {
                 System.out.print("The minimum element of the list is: ");
-        
+                System.out.print(findMin(arr));
             }
             else if (choice == 2)
             {
                 System.out.print("The maximum element of the list is: ");
+                System.out.print(findMax(arr));
             }
             else if (choice == 3)
             {
