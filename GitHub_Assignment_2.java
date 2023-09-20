@@ -6,6 +6,15 @@ public class GitHub_Assignment_2 {
   
     public static void main(String[] args) {
         boolean again = true;
+        Scanner in = new Scanner(System.in);
+        int minsize = 6;
+        int maxsize = 12;
+        Random random = new Random();
+        int arrsize = random.nextInt(maxsize - minsize + 1) + minsize;
+        int[] arr = new int[arrsize];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(101);
+        }
         while(again)
         {
             // Take choice input
@@ -20,7 +29,6 @@ public class GitHub_Assignment_2 {
             System.out.println("-------------------------------");
             System.out.print("Enter choice: ");
             int choice = in.nextInt();
-
 
             if (choice == 1)
             {
@@ -45,6 +53,7 @@ public class GitHub_Assignment_2 {
             else if (choice == 6)
             {
                 again = false;
+                in.close();
             }
         }
     }
