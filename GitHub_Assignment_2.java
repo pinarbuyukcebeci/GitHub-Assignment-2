@@ -74,14 +74,14 @@ public class GitHub_Assignment_2 {
         
 
         //creating array where will be shown difference of original values from average
-        int[] arrOfDiff = new int[nums.length] ;
-        for (int i = 0 ; i < arrOfDiff.length ; i++)  
+        int[] arrFromDiff = new int[nums.length] ;
+        for (int i = 0 ; i < arrFromDiff.length ; i++)  
         {
-            arrOfDiff[i] = nums[i] - average ;
+            arrFromDiff[i] = nums[i] - average ;
         } 
 
         // displaying array of difference
-        System.out.print("The differences of elements of the array from average are:" + Arrays.toString(arrOfDiff));
+        System.out.print("The differences of elements of the array from average are:" + Arrays.toString(arrFromDiff));
     }
 
 }
