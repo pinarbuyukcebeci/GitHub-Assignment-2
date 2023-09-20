@@ -20,7 +20,8 @@ public class GitHub_Assignment_2 {
             System.out.println("-------------------------------");
             System.out.print("Enter choice: ");
             int choice = in.nextInt();
-
+            int sumOfOdd = 0;
+            int sumOfEven = 0;
 
             if (choice == 1)
             {
@@ -36,11 +37,17 @@ public class GitHub_Assignment_2 {
             }
             else if (choice == 4)
             {
-                System.out.print("The sums of elements on odd indexes: ");  
+                for(int ind=1; ind < arr.length; ind+=2){
+                    sumOfOdd += arr[ind];
+                }
+                System.out.print("The sums of elements on odd indexes: "+ sumOfOdd);  
             }
             else if (choice == 5)
             {
-                System.out.print("The sums of elements on even indexes: ");  
+                for(int ind=1; ind < arr.length; ind+=2){
+                    sumOfEven += arr[ind];
+                }
+                System.out.print("The sums of elements on even indexes: " + sumOfEven);  
             }
             else if (choice == 6)
             {
