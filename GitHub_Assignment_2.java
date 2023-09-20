@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
 
-
 public class GitHub_Assignment_2 {
 
     public static int findMax(int[]arr){
@@ -22,71 +21,6 @@ public class GitHub_Assignment_2 {
             }
         }
         return min;
-    }
-
-    public static void main(String[] args) {
-        boolean again = true;
-        Scanner in = new Scanner(System.in);
-        int minsize = 6;
-        int maxsize = 12;
-        Random random = new Random();
-        int arrsize = random.nextInt(maxsize - minsize + 1) + minsize;
-        int[] arr = new int[arrsize];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(101);
-        }
-        while(again)
-        {
-            // Take choice input
-            System.out.println("\nPlease choose what you want to find:");
-            System.out.println("-------------------------------");
-            System.out.println("1) Minimum of the array:");
-            System.out.println("2) Maximum of the array:");
-            System.out.println("3) Difference from the average:");
-            System.out.println("4) The sum of the odd indexes");
-            System.out.println("5) The sum of the even indexes");
-            System.out.println("6) Exit");
-            System.out.println("-------------------------------");
-            System.out.print("Enter choice: ");
-            int choice = in.nextInt();
-            int sumOfOdd = 0;
-            int sumOfEven = 0;
-
-            if (choice == 1)
-            {
-                System.out.print("The minimum element of the list is: ");
-                System.out.print(findMin(arr));
-            }
-            else if (choice == 2)
-            {
-                System.out.print("The maximum element of the list is: ");
-                System.out.print(findMax(arr));
-            }
-            else if (choice == 3)
-            {
-                arrDifferenceFromAvg(arr); 
-            }
-            else if (choice == 4)
-            {
-                for(int ind=1; ind < arr.length; ind+=2){
-                    sumOfOdd += arr[ind];
-                }
-                System.out.print("The sums of elements on odd indexes: "+ sumOfOdd);  
-            }
-            else if (choice == 5)
-            {
-                for(int ind=0; ind < arr.length; ind+=2){
-                    sumOfEven += arr[ind];
-                }
-                System.out.print("The sums of elements on even indexes: " + sumOfEven);  
-            }
-            else if (choice == 6)
-            {
-                again = false;
-                in.close();
-            }
-
-        }
     }
 
     public static void arrDifferenceFromAvg(int[] nums) 
@@ -124,6 +58,72 @@ public class GitHub_Assignment_2 {
         System.out.print("The differences of elements of the array from average are:" + Arrays.toString(arrFromDiff));
     }
 
+    public static void main(String[] args) {
+        
+        boolean again = true;
+        Scanner in = new Scanner(System.in);
 
+        // Creating an int array that contains random integers in the range [0, 100] with given array size
+        int minsize = 6;
+        int maxsize = 12;
+        Random random = new Random();
+        int arrsize = random.nextInt(maxsize - minsize + 1) + minsize;
+        int[] arr = new int[arrsize];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(101);
+        }
+        
+        while(again)
+        {
+            // Display menu options
+            System.out.println("\nPlease choose what you want to find:");
+            System.out.println("-------------------------------");
+            System.out.println("1) Minimum of the array:");
+            System.out.println("2) Maximum of the array:");
+            System.out.println("3) Difference from the average:");
+            System.out.println("4) The sum of the odd indexes");
+            System.out.println("5) The sum of the even indexes");
+            System.out.println("6) Exit");
+            System.out.println("-------------------------------");
+            // Take choice input
+            System.out.print("Enter choice: ");
+            int choice = in.nextInt();
+            int sumOfOdd = 0;
+            int sumOfEven = 0;
 
+            if (choice == 1)
+            {
+                System.out.print("The minimum element of the list is: ");
+                System.out.print(findMin(arr));
+            }
+            else if (choice == 2)
+            {
+                System.out.print("The maximum element of the list is: ");
+                System.out.print(findMax(arr));
+            }
+            else if (choice == 3)
+            {
+                arrDifferenceFromAvg(arr); 
+            }
+            else if (choice == 4)
+            {
+                for(int ind=1; ind < arr.length; ind+=2){
+                    sumOfOdd += arr[ind];
+                }
+                System.out.print("The sums of elements on odd indexes: "+ sumOfOdd);  
+            }
+            else if (choice == 5)
+            {
+                for(int ind=0; ind < arr.length; ind+=2){
+                    sumOfEven += arr[ind];
+                }
+                System.out.print("The sums of elements on even indexes: " + sumOfEven);  
+            }
+            else if (choice == 6)
+            {
+                again = false; // choice is exit, no repetition after here
+                in.close();
+            }
+        }
+    }
 }
