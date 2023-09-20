@@ -45,6 +45,7 @@ public class GitHub_Assignment_2 {
             else if (choice == 6)
             {
                 again = false;
+                in.close();
             }
         }
     }
