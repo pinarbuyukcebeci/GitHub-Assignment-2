@@ -32,7 +32,7 @@ public class GitHub_Assignment_2 {
             }
             else if (choice == 3)
             {
-                System.out.print("The differences of elements of the list from average are: ");  
+                arrDifferenceFromAvg(arr); 
             }
             else if (choice == 4)
             {
@@ -47,6 +47,41 @@ public class GitHub_Assignment_2 {
                 again = false;
             }
         }
+    }
+
+    public static void arrDifferenceFromAvg(int[] nums) 
+    {
+        // creating sum and average variables
+        int sum = 0 ;
+        int average ;
+        //finding sum
+        for (int i : nums) 
+        {
+            sum += i ;
+        }
+
+        //displaying average
+        if (sum/nums.length % 2 != 0) 
+        {
+            average = (sum+1)/nums.length ;
+            System.out.println("Average of an array is:" + average);
+        }
+        else 
+        {
+            average = sum/nums.length ; 
+            System.out.println("Average of an array is:" + average);
+        }
+        
+
+        //creating array where will be shown difference of original values from average
+        int[] arrOfDiff = new int[nums.length] ;
+        for (int i = 0 ; i < arrOfDiff.length ; i++)  
+        {
+            arrOfDiff[i] = nums[i] - average ;
+        } 
+
+        // displaying array of difference
+        System.out.print("The differences of elements of the array from average are:" + Arrays.toString(arrOfDiff));
     }
 
 }
